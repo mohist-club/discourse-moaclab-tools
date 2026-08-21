@@ -1,0 +1,4 @@
+plugins:
+  moaclab_tools_enabled:
+    default: true
+    client: true

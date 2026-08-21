@@ -1,3 +1,16 @@
 zh_CN:
   site_settings:
     moaclab_tools_enabled: "启用 Typing 与 3D Viewer 的原生页面路由。"
+    moaclab_typing_meta_title: "Typing 页面标题；留空时使用当前语言的默认文案。"
+    moaclab_typing_meta_description: "Typing 页面 Meta Description；留空时使用当前语言的默认文案。"
+    moaclab_typing_meta_keywords: "Typing 页面关键词，用英文逗号分隔；留空时使用当前语言的默认文案。"
+    moaclab_viewer_meta_title: "3D Viewer 页面标题；留空时使用当前语言的默认文案。"
+    moaclab_viewer_meta_description: "3D Viewer 页面 Meta Description；留空时使用当前语言的默认文案。"
+    moaclab_viewer_meta_keywords: "3D Viewer 页面关键词，用英文逗号分隔；留空时使用当前语言的默认文案。"
+  discourse_moaclab_tools:
+    typing_title: "打字实验室"
+    typing_description: "支持中文拼音与英文的在线打字练习，实时统计速度、准确率，并提供机械键盘声音与敲击反馈。"
+    typing_keywords: "打字测试,在线打字练习,WPM,中文拼音打字,机械键盘,Moaclab"
+    viewer_title: "3D 工程查看器"
+    viewer_description: "在 Moaclab 社区直接打开、观察和检查 STEP、IGES、GLB、STL 与 OBJ 工程模型。"
+    viewer_keywords: "3D查看器,STEP查看器,IGES查看器,CAD查看器,机械键盘设计,Moaclab"

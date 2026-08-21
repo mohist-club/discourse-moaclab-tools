@@ -9,6 +9,19 @@ It registers first-class Discourse pages:
 
 The plugin only provides Rails shell routes, Ember route definitions, and refresh-safe URL handling. The Typing and CAD Viewer interfaces remain in their separate Discourse Theme Components.
 
+## Route TDK
+
+Typing and Viewer route metadata is owned by this plugin because it owns the real `/typing` and `/viewer` routes.
+
+- Browser title, description and keywords: `config/locales/client.en.yml` and `config/locales/client.zh_CN.yml`
+- Direct-load/crawler title, description and keywords: `config/locales/server.en.yml` and `config/locales/server.zh_CN.yml`
+- Client metadata lifecycle: `assets/javascripts/discourse/lib/moaclab-tool-meta.js`
+- Server metadata hooks: `plugin.rb`
+
+Keep the client and server strings aligned when editing TDK. Theme Component interface labels in `moaclab-typing` and `moaclab-cad-viewer` do not control page metadata.
+
+Administrators can override the localized defaults under **Admin → Plugins → Moaclab Tools → Settings** using the six `moaclab_*_meta_*` fields. Leaving a field empty keeps the language-pack value.
+
 ## Why this plugin exists
 
 Theme Components alone cannot create server-backed Discourse routes. Earlier `/?typing` and `/?viewer` query-parameter URLs stayed inside the Discovery route, which could leave Home, category, or tool sidebar entries selected at the same time.

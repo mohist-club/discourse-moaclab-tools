@@ -1,0 +1,9 @@
+en:
+  js:
+    discourse_moaclab_tools:
+      typing_title: "Typing Lab"
+      typing_description: "Practice Chinese pinyin and English typing with live speed, accuracy, sound and mechanical-keyboard feedback."
+      typing_keywords: "typing test, typing practice, WPM, Chinese pinyin typing, mechanical keyboard, Moaclab"
+      viewer_title: "3D Engineering Viewer"
+      viewer_description: "Open and inspect STEP, IGES, GLB, STL and OBJ engineering models directly in the Moaclab community."
+      viewer_keywords: "3D viewer, STEP viewer, IGES viewer, CAD viewer, mechanical keyboard design, Moaclab"

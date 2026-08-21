@@ -2,3 +2,27 @@ plugins:
   moaclab_tools_enabled:
     default: true
     client: true
+  moaclab_typing_meta_title:
+    default: ""
+    client: true
+    type: string
+  moaclab_typing_meta_description:
+    default: ""
+    client: true
+    type: string
+  moaclab_typing_meta_keywords:
+    default: ""
+    client: true
+    type: string
+  moaclab_viewer_meta_title:
+    default: ""
+    client: true
+    type: string
+  moaclab_viewer_meta_description:
+    default: ""
+    client: true
+    type: string
+  moaclab_viewer_meta_keywords:
+    default: ""
+    client: true
+    type: string

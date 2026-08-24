@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.3.0 - 2026-08-24
+
+- Serve the CAD Viewer bundle and OCCT/Draco decoders from versioned plugin `public/` URLs.
+- Remove the Viewer runtime's dependency on pruneable Discourse theme-upload URLs.
+
 ## 1.2.0 - 2026-08-21
 
 - Add editable Title, Description and Keywords site settings for Typing and 3D Viewer.

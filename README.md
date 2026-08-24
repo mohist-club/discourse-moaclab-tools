@@ -7,7 +7,9 @@ It registers first-class Discourse pages:
 - `/typing` -> Ember route `moaclab-typing`
 - `/viewer` -> Ember route `moaclab-viewer`
 
-The plugin only provides Rails shell routes, Ember route definitions, and refresh-safe URL handling. The Typing and CAD Viewer interfaces remain in their separate Discourse Theme Components.
+The plugin provides Rails shell routes, Ember route definitions, refresh-safe URL handling, and the versioned CAD Viewer runtime under `/plugins/discourse-moaclab-tools/viewer/`. The Typing and CAD Viewer interfaces remain in their separate Discourse Theme Components.
+
+The CAD runtime lives in the plugin rather than Theme Component uploads. Discourse can prune or replace upload-backed asset URLs, while plugin `public/` assets keep a stable path across browsers and caches. Rebuild this plugin before installing a CAD Viewer component that references a newer runtime version.
 
 ## Route TDK
 
@@ -57,7 +59,7 @@ After the plugin rebuild finishes, install or update these Theme Components from
 - `moaclab-typing.zip`
 - `moaclab-cad-viewer.zip`
 
-Enable each component on the active theme. The components provide UI, local assets, browser storage, and sidebar links; this plugin only makes `/typing` and `/viewer` true Discourse routes.
+Enable each component on the active theme. The components provide UI, browser storage, and sidebar links; this plugin makes `/typing` and `/viewer` true Discourse routes and serves the CAD Viewer runtime.
 
 ## Replacing The Old Route Plugin
 

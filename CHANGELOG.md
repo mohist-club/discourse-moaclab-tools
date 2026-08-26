@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.7 - 2026-08-26
+
+- Add CAD Viewer runtime `v051`.
+- Make the 3D canvas background theme-aware instead of hard-coding a near-white canvas: light mode uses a soft neutral grey, while dark mode uses a dark neutral surface.
+- Watch Discourse theme attribute changes so the canvas background follows light/dark theme switches.
+
 ## 1.5.6 - 2026-08-26
 
 - Add CAD Viewer runtime `v050`.

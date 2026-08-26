@@ -9,7 +9,7 @@ It registers first-class Discourse pages:
 
 The plugin provides Rails shell routes, Ember route definitions, refresh-safe URL handling, and the versioned CAD Viewer runtime under `/plugins/discourse-moaclab-tools/viewer/`. The Typing and CAD Viewer interfaces remain in their separate Discourse Theme Components.
 
-The CAD runtime lives in the plugin rather than Theme Component uploads. Discourse can prune or replace upload-backed asset URLs, while plugin `public/` assets keep a stable path across browsers and caches. Rebuild this plugin before installing a CAD Viewer component that references a newer runtime version. Version `1.5.5` publishes Viewer runtime `v049` with DXF local preview support, embedded-preview fit fixes, clean model-only previews, Autodesk-like preview lighting, shadow rendering, clearer material response, fixed STEP/IGES explode vectors, and persistent CAD model endpoints for post embeds.
+The CAD runtime lives in the plugin rather than Theme Component uploads. Discourse can prune or replace upload-backed asset URLs, while plugin `public/` assets keep a stable path across browsers and caches. Rebuild this plugin before installing a CAD Viewer component that references a newer runtime version. Version `1.5.6` publishes Viewer runtime `v050` with DXF local preview support, embedded-preview fit fixes, clean model-only previews, balanced product-style camera defaults, Autodesk-like preview lighting, shadow rendering, clearer material response, fixed STEP/IGES explode vectors, and persistent CAD model endpoints for post embeds.
 
 ## CAD Model Embed Storage
 

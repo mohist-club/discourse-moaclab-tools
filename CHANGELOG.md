@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.6 - 2026-08-26
+
+- Add CAD Viewer runtime `v050`.
+- Improve the default online preview composition with a less aggressive camera angle, more breathing room around thin keyboard parts, lower exposure, stronger readable shadow contrast, and less washed-out imported STEP / IGES materials.
+
 ## 1.5.5 - 2026-08-26
 
 - Add CAD Viewer runtime `v049`.

@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.1 - 2026-08-26
+
+- Add CAD Viewer runtime `v045`.
+- Default embedded model previews to solid mode, stop autorotation after load, and refit after the model is parsed.
+- Surface an explicit error for empty parsed geometry and a warning for extremely thin geometry.
+
 ## 1.5.0 - 2026-08-26
 
 - Add persistent CAD model upload and read endpoints for post embeds.

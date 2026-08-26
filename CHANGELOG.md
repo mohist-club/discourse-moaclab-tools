@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.5 - 2026-08-26
+
+- Add CAD Viewer runtime `v049`.
+- Fix the explode control for imported STEP / IGES models by calculating each part's explode vector from its actual bounding-box center relative to the whole model center.
+
 ## 1.5.4 - 2026-08-26
 
 - Add CAD Viewer runtime `v048`.

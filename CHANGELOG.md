@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.2 - 2026-08-26
+
+- Add CAD Viewer runtime `v046`.
+- Remove the scene reference grid from embedded CAD previews for a cleaner model-only view.
+
 ## 1.5.1 - 2026-08-26
 
 - Add CAD Viewer runtime `v045`.

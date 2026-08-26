@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.3 - 2026-08-26
+
+- Add CAD Viewer runtime `v047`.
+- Improve CAD preview readability with a light Autodesk-like canvas, higher pixel ratio, brighter multi-direction lighting, and better default front-facing views for thin parts.
+
 ## 1.5.2 - 2026-08-26
 
 - Add CAD Viewer runtime `v046`.

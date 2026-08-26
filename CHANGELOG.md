@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.4 - 2026-08-26
+
+- Add CAD Viewer runtime `v048`.
+- Tune the CAD preview renderer toward Autodesk-style appearance settings: shadow rendering, high pixel ratio, sharp-highlight lighting, light neutral canvas, and less overly-metallic imported STEP/IGES materials.
+- Keep mesh wireframe disabled by default to avoid reintroducing the unwanted reference/grid-line look on thin models.
+
 ## 1.5.3 - 2026-08-26
 
 - Add CAD Viewer runtime `v047`.

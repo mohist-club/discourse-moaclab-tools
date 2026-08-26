@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0 - 2026-08-26
+
+- Add persistent CAD model upload and read endpoints for post embeds.
+- Let published CAD previews reference stable model ids instead of pruneable Discourse upload short URLs.
+- Keep model responses inline for viewer fetches without rendering a download link in posts.
+
 ## 1.4.0 - 2026-08-26
 
 - Add CAD Viewer runtime `v044`.

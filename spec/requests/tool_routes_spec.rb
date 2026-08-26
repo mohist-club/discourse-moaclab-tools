@@ -28,4 +28,9 @@ describe "Moaclab tool routes" do
     expect(response.status).to eq(200)
     expect(response.media_type).to eq("application/wasm")
   end
+
+  it "rejects malformed CAD model ids" do
+    get "/moaclab-cad/models/not-a-model"
+    expect(response.status).to eq(404)
+  end
 end

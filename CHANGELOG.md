@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.0 - 2026-08-26
+
+- Add CAD Viewer runtime `v044`.
+- Support DXF local preview in the Discourse `/viewer` runtime.
+- Keep the existing `v043` runtime for compatibility with older theme component versions.
+
 ## 1.3.0 - 2026-08-24
 
 - Serve the CAD Viewer bundle and OCCT/Draco decoders from versioned plugin `public/` URLs.

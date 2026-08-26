@@ -18,13 +18,13 @@ describe "Moaclab tool routes" do
   end
 
   it "publishes the versioned CAD Viewer runtime" do
-    get "/plugins/discourse-moaclab-tools/viewer/v043/viewer-bundle-v043.js"
+    get "/plugins/discourse-moaclab-tools/viewer/v044/viewer-bundle-v044.js"
     expect(response.status).to eq(200)
     expect(%w[application/javascript text/javascript]).to include(response.media_type)
   end
 
   it "publishes the OCCT WebAssembly decoder" do
-    get "/plugins/discourse-moaclab-tools/viewer/v043/occt-import-js-v043.wasm"
+    get "/plugins/discourse-moaclab-tools/viewer/v044/occt-import-js-v044.wasm"
     expect(response.status).to eq(200)
     expect(response.media_type).to eq("application/wasm")
   end

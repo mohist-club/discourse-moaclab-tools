@@ -3,7 +3,7 @@
 # name: discourse-moaclab-tools
 # about: Registers first-class /typing and /viewer routes plus CAD model storage for Moaclab tool theme components.
 # meta_topic_id: 0
-# version: 1.5.9
+# version: 1.5.10
 # authors: Moaclab, Codex
 # url: https://moaclab.com
 # required_version: 3.3.0

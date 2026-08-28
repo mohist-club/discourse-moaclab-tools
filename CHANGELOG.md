@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.10 - 2026-08-28
+
+- Add CAD Viewer runtime `v054`.
+- Remove LibreDWG's dynamic JavaScript invoker generation so DWG loading can run under Discourse CSP without `unsafe-eval`.
+
 ## 1.5.9 - 2026-08-28
 
 - Add CAD Viewer runtime `v053`.

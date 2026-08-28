@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.11 - 2026-08-28
+
+- Add CAD Viewer runtime `v055`.
+- Add a DWG-to-DXF fallback path when direct DWG database reading returns no data.
+- Improve the unsupported DWG error message for files LibreDWG still cannot decode.
+
 ## 1.5.10 - 2026-08-28
 
 - Add CAD Viewer runtime `v054`.

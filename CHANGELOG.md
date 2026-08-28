@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.9 - 2026-08-28
+
+- Add CAD Viewer runtime `v053`.
+- Show supported file formats in the viewer header.
+- Show the active uploaded file name inside the canvas.
+
 ## 1.5.8 - 2026-08-28
 
 - Add CAD Viewer runtime `v052`.

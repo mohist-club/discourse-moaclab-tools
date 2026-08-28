@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.8 - 2026-08-28
+
+- Add CAD Viewer runtime `v052`.
+- Add DWG persistent model upload/read support.
+- Bundle LibreDWG WebAssembly runtime for browser-side DWG preview of common model-space 2D entities.
+
 ## 1.5.7 - 2026-08-26
 
 - Add CAD Viewer runtime `v051`.

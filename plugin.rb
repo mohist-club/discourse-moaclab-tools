@@ -3,7 +3,7 @@
 # name: discourse-moaclab-tools
 # about: Registers first-class /typing and /viewer routes plus CAD model storage for Moaclab tool theme components.
 # meta_topic_id: 0
-# version: 1.5.7
+# version: 1.5.8
 # authors: Moaclab, Codex
 # url: https://moaclab.com
 # required_version: 3.3.0
@@ -17,7 +17,7 @@ enabled_site_setting :moaclab_tools_enabled
 
 module ::DiscourseMoaclabTools
   ROUTES = { "/typing" => :typing, "/viewer" => :viewer }.freeze
-  MODEL_EXTENSIONS = %w[step stp igs iges dxf].freeze
+  MODEL_EXTENSIONS = %w[step stp igs iges dxf dwg].freeze
   MODEL_ID_PATTERN = /\A[a-f0-9]{16}\z/
   MAX_MODEL_BYTES = 25.megabytes
 

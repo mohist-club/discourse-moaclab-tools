@@ -9,7 +9,7 @@ It registers first-class Discourse pages:
 
 The plugin provides Rails shell routes, Ember route definitions, refresh-safe URL handling, and the versioned CAD Viewer runtime under `/plugins/discourse-moaclab-tools/viewer/`. The Typing and CAD Viewer interfaces remain in their separate Discourse Theme Components.
 
-The CAD runtime lives in the plugin rather than Theme Component uploads. Discourse can prune or replace upload-backed asset URLs, while plugin `public/` assets keep a stable path across browsers and caches. Rebuild this plugin before installing a CAD Viewer component that references a newer runtime version. Version `1.5.7` publishes Viewer runtime `v051` with DXF local preview support, embedded-preview fit fixes, clean model-only previews, theme-aware canvas backgrounds, balanced product-style camera defaults, Autodesk-like preview lighting, shadow rendering, clearer material response, fixed STEP/IGES explode vectors, and persistent CAD model endpoints for post embeds.
+The CAD runtime lives in the plugin rather than Theme Component uploads. Discourse can prune or replace upload-backed asset URLs, while plugin `public/` assets keep a stable path across browsers and caches. Rebuild this plugin before installing a CAD Viewer component that references a newer runtime version. Version `1.5.8` publishes Viewer runtime `v052` with DWG preview support, DXF local preview support, embedded-preview fit fixes, clean model-only previews, theme-aware canvas backgrounds, balanced product-style camera defaults, Autodesk-like preview lighting, shadow rendering, clearer material response, fixed STEP/IGES explode vectors, and persistent CAD model endpoints for post embeds.
 
 ## CAD Model Embed Storage
 
@@ -19,7 +19,7 @@ The CAD Viewer Theme Component posts model embeds by uploading the model file to
 [moaclab-3d id="0123456789abcdef" ext="step" title="example.step"]
 ```
 
-The model file is served back through `/moaclab-cad/models/:id` with `Content-Disposition: inline`, so anonymous readers can preview public topic embeds from another browser without needing the uploader's local file. The post still uses a normal Discourse image upload for the preview screenshot.
+The model file is served back through `/moaclab-cad/models/:id` with `Content-Disposition: inline`, so anonymous readers can preview public topic embeds from another browser without needing the uploader's local file. Supported persistent model extensions are `step`, `stp`, `igs`, `iges`, `dxf`, and `dwg`. The post still uses a normal Discourse image upload for the preview screenshot.
 
 ## Route TDK
 

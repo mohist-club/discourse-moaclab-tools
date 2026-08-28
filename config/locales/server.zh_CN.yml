@@ -12,5 +12,5 @@ zh_CN:
     typing_description: "支持中文拼音与英文的在线打字练习，实时统计速度、准确率，并提供机械键盘声音与敲击反馈。"
     typing_keywords: "打字测试,在线打字练习,WPM,中文拼音打字,机械键盘,Moaclab"
     viewer_title: "3D 工程查看器"
-    viewer_description: "在 Moaclab 社区直接打开、观察和检查 STEP、IGES、GLB、STL 与 OBJ 工程模型。"
-    viewer_keywords: "3D查看器,STEP查看器,IGES查看器,CAD查看器,机械键盘设计,Moaclab"
+    viewer_description: "在 Moaclab 社区直接打开、观察和检查 STEP、IGES、DXF、DWG、GLB、STL 与 OBJ 工程模型。"
+    viewer_keywords: "3D查看器,STEP查看器,IGES查看器,DXF查看器,DWG查看器,CAD查看器,机械键盘设计,Moaclab"

@@ -71,6 +71,16 @@ After the plugin rebuild finishes, install or update these Theme Components from
 
 Enable each component on the active theme. The components provide UI, browser storage, and sidebar links; this plugin makes `/typing` and `/viewer` true Discourse routes and serves the CAD Viewer runtime.
 
+## Private CAD Sources (1.7.0)
+
+Shared posts preview a public GLB mesh. The original STEP / IGES / DXF / DWG can additionally be stored privately:
+
+- `POST /moaclab-cad/sources` (logged in) stores the file outside `public/`, in `/shared/moaclab-cad-sources` on the production container (persistent across rebuilds). Set `MOACLAB_CAD_SOURCE_DIR` to use another path.
+- `GET /moaclab-cad/sources/:id` streams the file only to members of `moaclab_cad_source_download_groups` (default: admins). Everyone else, including the uploader, gets 403.
+- `current_user.can_download_moaclab_cad_sources` tells the theme component whether to show a download button. Hiding the button is only UX; the server check is the boundary.
+- Discourse backups do not include this directory. Back up `/shared/moaclab-cad-sources` separately.
+- nginx `client_max_body_size` must be at least `moaclab_cad_source_max_size_mb` (default 100 MB).
+
 ## Replacing The Old Route Plugin
 
 If `discourse-moaclab-typing-route` is installed, remove it from `app.yml` before adding this plugin. The old plugin only registered the `/typing` Rails shell and will conflict with this plugin.

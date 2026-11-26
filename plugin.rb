@@ -3,7 +3,7 @@
 # name: discourse-moaclab-tools
 # about: Registers first-class /typing and /viewer routes plus CAD model storage for Moaclab tool theme components.
 # meta_topic_id: 0
-# version: 1.5.11
+# version: 1.6.1
 # authors: Moaclab, Codex
 # url: https://moaclab.com
 # required_version: 3.3.0
@@ -14,10 +14,11 @@ require "json"
 require "securerandom"
 
 enabled_site_setting :moaclab_tools_enabled
+register_asset "stylesheets/cad-library.scss"
 
 module ::DiscourseMoaclabTools
   ROUTES = { "/typing" => :typing, "/viewer" => :viewer }.freeze
-  MODEL_EXTENSIONS = %w[step stp igs iges dxf dwg].freeze
+  MODEL_EXTENSIONS = %w[step stp igs iges dxf dwg glb gltf stl obj].freeze
   MODEL_ID_PATTERN = /\A[a-f0-9]{16}\z/
   MAX_MODEL_BYTES = 25.megabytes
 
@@ -60,7 +61,18 @@ register_html_builder("server:before-head-close") do |controller|
 end
 
 after_initialize do
+  require_relative "lib/discourse_moaclab_tools/drawing_library"
+
   module ::DiscourseMoaclabTools
+    class DrawingsController < ::ApplicationController
+      requires_plugin "discourse-moaclab-tools"
+
+      def index
+        response.headers["Cache-Control"] = "private, no-store"
+        render json: DrawingLibrary.new(guardian).list(params)
+      end
+    end
+
     class ModelsController < ::ApplicationController
       requires_plugin "discourse-moaclab-tools"
 
@@ -133,6 +145,7 @@ after_initialize do
   Discourse::Application.routes.append do
     get "/typing" => "list#latest", defaults: { format: :html }
     get "/viewer" => "list#latest", defaults: { format: :html }
+    get "/moaclab-cad/drawings" => "discourse_moaclab_tools/drawings#index", defaults: { format: :json }
     post "/moaclab-cad/models" => "discourse_moaclab_tools/models#create", defaults: { format: :json }
     get "/moaclab-cad/models/:id" => "discourse_moaclab_tools/models#show", constraints: { id: /[a-f0-9]{16}/ }
   end

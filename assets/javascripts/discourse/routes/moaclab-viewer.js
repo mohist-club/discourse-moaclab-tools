@@ -5,6 +5,13 @@ import { applyToolMeta } from "../lib/moaclab-tool-meta";
 
 export default class MoaclabViewerRoute extends DiscourseRoute {
   @service siteSettings;
+  queryParams = Object.fromEntries(
+    ["mode", "id", "upload", "url", "ext", "name", "embed", "share"].map((key) => [key, { refreshModel: true }])
+  );
+
+  model(params) {
+    return { preview: Boolean(params.mode === "preview" || params.id || params.upload || params.url || params.embed === "1") };
+  }
 
   metaValue(setting, localeKey) {
     return this.siteSettings[setting]?.trim() || i18n(localeKey);

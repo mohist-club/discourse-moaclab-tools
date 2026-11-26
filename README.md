@@ -7,6 +7,28 @@ It registers first-class Discourse pages:
 - `/typing` -> Ember route `moaclab-typing`
 - `/viewer` -> Ember route `moaclab-viewer`
 
+## Drawing Library / 图纸列表 (1.6.0)
+
+`/viewer` now displays public drawing topics. `/viewer?mode=preview` keeps local
+preview available without uploading a file. Existing `id`, `upload`, `url` and
+`embed=1` preview links continue to work with CAD Viewer component 0.5.0.
+
+默认入口展示图纸列表，可搜索名称、筛选格式、查看原帖或打开预览。每张图纸仍在
+原帖维护：标题取话题标题，封面取首帖首张非表情图片，模型取首帖的有效
+`[moaclab-3d ...]`。仅收录公开、未隐藏、未删除的普通话题；不收录私信和受限类别。
+首帖中的代码块和引用示例不收录，`listed="false"` 可排除单个预览引用。
+
+上传流程：打开模型 → 勾选“分享到图纸列表” → 发布图纸 → 原生编辑器确认发布。
+发布成功即自动进入列表，无需另建目录记录。未分享的本地模型不会上传。
+需要登录才能分享；原生发帖权限、类别权限和审核规则继续生效。
+
+`GET /moaclab-cad/drawings.json` accepts `q`, `format_filter` and a `before` cursor.
+It returns up to 24 topic-backed entries and `next_before`; no public response cache
+is used. Every request rechecks topic visibility. CAD file uploads are capped at 25 MiB.
+
+Deploy the plugin and component together. No database migration is required.
+Keep the existing versioned viewer runtime (`v055`); no renderer change is needed.
+
 The plugin provides Rails shell routes, Ember route definitions, refresh-safe URL handling, and the versioned CAD Viewer runtime under `/plugins/discourse-moaclab-tools/viewer/`. The Typing and CAD Viewer interfaces remain in their separate Discourse Theme Components.
 
 The CAD runtime lives in the plugin rather than Theme Component uploads. Discourse can prune or replace upload-backed asset URLs, while plugin `public/` assets keep a stable path across browsers and caches. Rebuild this plugin before installing a CAD Viewer component that references a newer runtime version. Version `1.5.11` publishes Viewer runtime `v055` with a DWG-to-DXF fallback path, a Discourse CSP-safe DWG decoder path, supported-format labeling, the active file name inside the canvas, DWG preview support, DXF local preview support, embedded-preview fit fixes, clean model-only previews, theme-aware canvas backgrounds, balanced product-style camera defaults, Autodesk-like preview lighting, shadow rendering, clearer material response, fixed STEP/IGES explode vectors, and persistent CAD model endpoints for post embeds.

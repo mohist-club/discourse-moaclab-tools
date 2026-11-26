@@ -1,5 +1,25 @@
 # Changelog
 
+## 1.6.1 - 2026-10-22
+
+- 图纸列表同时收录 `drawings` 标签下的公开话题，同一话题不重复展示。
+  Include public topics tagged `drawings` alongside existing CAD references without duplicates.
+- 自动识别标签话题首帖的本站 CAD 附件；没有可预览附件的条目仅显示详情入口。
+  Detect supported native CAD attachments in tagged first posts; topics without previewable files link to their details only.
+- 保留权限过滤、搜索、格式筛选、分页与明确的不收录设置。
+  Preserve visibility checks, search, format filtering, pagination and explicit listing opt-outs.
+- 附件预览遵循登录后下载限制，忽略不存在或安全附件，不绕过站点权限。
+  Respect login-required downloads and exclude missing or secure attachments without bypassing access controls.
+
+## 1.6.0 - 2026-10-22
+
+- `/viewer` 默认显示公开图纸列表，支持搜索、格式筛选、分页、帖子详情与模型预览。
+  `/viewer` now opens the public drawing library with search, format filters, pagination, topic details and model previews.
+- 图纸随首帖维护并自动收录，排除私信、受限类别、隐藏和删除的内容。
+  Drawings follow their source topics automatically; private messages, restricted categories, hidden and deleted content are excluded.
+- 支持独立本地预览和自愿分享流程，保留原生发帖确认；新增 GLB、GLTF、STL 和 OBJ 存储支持。
+  Keep local previews separate from opt-in sharing through the native composer; add GLB, GLTF, STL and OBJ persistence.
+
 ## 1.5.11 - 2026-08-28
 
 - Add CAD Viewer runtime `v055`.

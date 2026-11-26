@@ -1,6 +1,21 @@
 en:
   js:
     discourse_moaclab_tools:
+      library:
+        title: "Drawings"
+        local: "Local preview"
+        upload: "Upload drawing"
+        search: "Search drawings"
+        format: "File format"
+        all_formats: "All formats"
+        details: "View topic"
+        preview: "Open preview"
+        replies: "replies"
+        loading: "Loading drawings..."
+        error: "Drawings could not be loaded. Please try again."
+        retry: "Retry"
+        more: "Load more"
+        empty: "No matching public drawings."
       typing_title: "Typing Lab"
       typing_description: "Practice Chinese pinyin and English typing with live speed, accuracy, sound and mechanical-keyboard feedback."
       typing_keywords: "typing test, typing practice, WPM, Chinese pinyin typing, mechanical keyboard, Moaclab"

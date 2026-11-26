@@ -1,0 +1,40 @@
+.moaclab-cad-library {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 0;
+  margin: 0 auto;
+  padding-block: 16px 40px;
+  color: var(--primary);
+  &, * { box-sizing: border-box; letter-spacing: 0; }
+  &__heading, &__actions, &__filters, &__card-actions, &__byline { display: flex; align-items: center; gap: 12px; }
+  &__heading { justify-content: space-between; flex-wrap: wrap; margin-bottom: 24px; }
+  h1 { font-size: 28px; margin: 0; }
+  &__actions { flex-wrap: wrap; }
+  .btn { min-height: 40px; gap: 8px; }
+  &__filters { padding-bottom: 20px; }
+  &__search { display: flex; align-items: stretch; flex: 1; max-width: 420px; min-width: 0; }
+  &__search input { min-width: 0; width: 100%; margin: 0; border-radius: 6px 0 0 6px; height: 40px; }
+  &__search .btn { border-radius: 0 6px 6px 0; }
+  select { height: 40px; max-width: 160px; margin: 0; }
+  &__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 24px; }
+  &__card { min-width: 0; overflow: hidden; border-radius: 8px; background: var(--primary-very-low); }
+  &__image { display: grid; position: relative; place-items: center; width: 100%; aspect-ratio: 4 / 3; background: var(--primary-low); overflow: hidden; color: var(--primary-medium); }
+  &__image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+  &__image > .d-icon { width: 44px; height: 44px; }
+  &__format { position: absolute; bottom: 12px; left: 12px; background: var(--secondary); color: var(--primary); border-radius: 4px; padding: 4px 8px; font-size: 12px; font-weight: 600; }
+  &__body { padding: 16px; }
+  h2 { font-size: 17px; line-height: 1.45; margin: 0 0 10px; overflow-wrap: anywhere; }
+  h2 a { color: var(--primary); }
+  &__byline { justify-content: space-between; flex-wrap: wrap; color: var(--primary-medium); font-size: 12px; margin: 0 0 16px; }
+  &__card-actions { justify-content: space-between; flex-wrap: wrap; font-size: 13px; }
+  &__status { padding-block: 28px; text-align: center; color: var(--primary-medium); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--tertiary); outline-offset: 3px; }
+  @media (max-width: 600px) {
+    h1 { font-size: 24px; }
+    &__heading { gap: 16px; }
+    &__filters { gap: 8px; }
+    select { max-width: 120px; }
+    &__grid { gap: 16px; }
+    .btn { min-height: 44px; }
+  }
+}

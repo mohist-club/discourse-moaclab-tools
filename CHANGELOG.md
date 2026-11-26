@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.0 - 2026-11-26
+
+- Add private CAD source storage: `POST /moaclab-cad/sources` (logged-in users; STEP / STP / IGES / IGS / DXF / DWG; size limit from `moaclab_cad_source_max_size_mb`, default 100 MB) stores the original file outside `public/` (`/shared/moaclab-cad-sources` in production, overridable with `MOACLAB_CAD_SOURCE_DIR`).
+- Add `GET /moaclab-cad/sources/:id`: only members of `moaclab_cad_source_download_groups` (default: admins) can download; everyone else gets 403. Responses are `attachment`, `private, no-store`.
+- Add `can_download_moaclab_cad_sources` to the current user serializer so the CAD Viewer component can show a download button only to permitted users.
+- Existing `/moaclab-cad/models` endpoints are unchanged.
+
 ## 1.5.11 - 2026-08-28
 
 - Add CAD Viewer runtime `v055`.

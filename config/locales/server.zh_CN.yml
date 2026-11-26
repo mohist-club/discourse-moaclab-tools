@@ -7,6 +7,8 @@ zh_CN:
     moaclab_viewer_meta_title: "3D Viewer 页面标题；留空时使用当前语言的默认文案。"
     moaclab_viewer_meta_description: "3D Viewer 页面 Meta Description；留空时使用当前语言的默认文案。"
     moaclab_viewer_meta_keywords: "3D Viewer 页面关键词，用英文逗号分隔；留空时使用当前语言的默认文案。"
+    moaclab_cad_source_download_groups: "可以下载私存 CAD 源文件（STEP、IGES、DXF、DWG）的群组；其他人只能看公开的预览网格。默认只有管理员。"
+    moaclab_cad_source_max_size_mb: "单个私存 CAD 源文件的大小上限（MB）。nginx 的上传上限 client_max_body_size 不能小于这个值。"
   discourse_moaclab_tools:
     typing_title: "打字实验室"
     typing_description: "支持中文拼音与英文的在线打字练习，实时统计速度、准确率，并提供机械键盘声音与敲击反馈。"

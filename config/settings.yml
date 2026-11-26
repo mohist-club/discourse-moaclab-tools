@@ -26,3 +26,12 @@ plugins:
     default: ""
     client: true
     type: string
+  moaclab_cad_source_download_groups:
+    default: "1"
+    type: group_list
+    allow_any: false
+    refresh: true
+  moaclab_cad_source_max_size_mb:
+    default: 100
+    min: 1
+    max: 1024

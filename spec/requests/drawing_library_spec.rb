@@ -4,6 +4,7 @@ require "rails_helper"
 describe "Moaclab drawing library" do
   let(:raw) { '[moaclab-3d id="0123456789abcdef" ext="step" title="case.step"]' }
   fab!(:user)
+  fab!(:group)
 
   before do
     SiteSetting.moaclab_tools_enabled = true
@@ -26,7 +27,7 @@ describe "Moaclab drawing library" do
 
   it "excludes private messages, restricted categories and unlisted topics" do
     private_post = draw(topic: Fabricate(:private_message_topic, user: user))
-    restricted = draw(topic: Fabricate(:topic, category: Fabricate(:private_category)))
+    restricted = draw(topic: Fabricate(:topic, category: Fabricate(:private_category, group: group)))
     unlisted = draw(topic: Fabricate(:topic, visible: false))
     get "/moaclab-cad/drawings.json"
     expect(response.parsed_body["drawings"].map { |item| item["id"] }).not_to include(private_post.topic_id, restricted.topic_id, unlisted.topic_id)
@@ -59,6 +60,7 @@ describe "Moaclab drawing library" do
   end
 
   it "includes drawings-tag topics without a shortcode and previews native attachments" do
+    SiteSetting.authorized_extensions = "jpg|jpeg|png|step"
     tag = Fabricate(:tag, name: "drawings")
     overview = draw(raw: "Open source drawing project")
     attached = draw(raw: "[plate.step|attachment](upload://abc123.step)")
@@ -88,7 +90,7 @@ describe "Moaclab drawing library" do
   it "deduplicates tagged references and keeps tag visibility and opt-out rules" do
     tag = Fabricate(:tag, name: "drawings")
     public_post = draw
-    restricted = draw(topic: Fabricate(:topic, category: Fabricate(:private_category)))
+    restricted = draw(topic: Fabricate(:topic, category: Fabricate(:private_category, group: group)))
     unlisted = draw(topic: Fabricate(:topic, visible: false))
     opted_out = draw(raw: raw.sub("]", ' listed="false"]'))
     [public_post, restricted, unlisted, opted_out].each { |post| post.topic.tags << tag }
